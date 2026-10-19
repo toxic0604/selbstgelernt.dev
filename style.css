@@ -1,0 +1,114 @@
+/* selbstgelernt.dev – einfaches, schnelles Design */
+:root {
+  --accent: #0f766e;
+  --accent-light: #ccfbf1;
+  --text: #1a1a2e;
+  --muted: #5b5b72;
+  --bg: #fdfdfc;
+  --card: #ffffff;
+  --border: #e5e5e8;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  color: var(--text);
+  background: var(--bg);
+  line-height: 1.65;
+}
+.wrap { max-width: 760px; margin: 0 auto; padding: 0 1.25rem; }
+
+/* Header */
+header.site {
+  border-bottom: 1px solid var(--border);
+  background: var(--card);
+  position: sticky; top: 0; z-index: 10;
+}
+header.site .wrap {
+  display: flex; align-items: center; justify-content: space-between;
+  padding-top: 0.9rem; padding-bottom: 0.9rem;
+}
+.logo { font-weight: 800; font-size: 1.15rem; text-decoration: none; color: var(--text); }
+.logo span { color: var(--accent); }
+nav a {
+  margin-left: 1.1rem; text-decoration: none; color: var(--muted);
+  font-size: 0.95rem; font-weight: 500;
+}
+nav a:hover { color: var(--accent); }
+
+/* Header */
+.hero { padding: 4rem 0 3rem; text-align: center; }
+.hero h1 { font-size: clamp(1.9rem, 5vw, 2.8rem); line-height: 1.15; letter-spacing: -0.02em; }
+.hero p.sub { margin-top: 1rem; color: var(--muted); font-size: 1.1rem; max-width: 540px; margin-left: auto; margin-right: auto; }
+.btn {
+  display: inline-block; margin-top: 1.6rem; padding: 0.8rem 1.6rem;
+  background: var(--accent); color: #fff; border-radius: 10px;
+  text-decoration: none; font-weight: 600; font-size: 1rem;
+}
+.btn:hover { filter: brightness(1.1); }
+.btn.secondary { background: var(--accent-light); color: var(--accent); margin-left: 0.5rem; }
+
+/* Karten */
+.cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 1rem; margin: 2rem 0; }
+.card {
+  background: var(--card); border: 1px solid var(--border); border-radius: 12px;
+  padding: 1.2rem; text-decoration: none; color: var(--text); display: block;
+  transition: border-color 0.15s;
+}
+.card:hover { border-color: var(--accent); }
+.card h3 { font-size: 1.05rem; margin-bottom: 0.35rem; color: var(--accent); }
+.card p { font-size: 0.9rem; color: var(--muted); }
+
+/* Artikel-Liste */
+article.listing { border-bottom: 1px solid var(--border); padding: 1.4rem 0; }
+article.listing a { text-decoration: none; color: var(--text); }
+article.listing h2 { font-size: 1.25rem; }
+article.listing h2:hover { color: var(--accent); }
+article.listing p { color: var(--muted); font-size: 0.95rem; margin-top: 0.3rem; }
+.tag {
+  display: inline-block; background: var(--accent-light); color: var(--accent);
+  font-size: 0.75rem; font-weight: 700; padding: 0.15rem 0.55rem;
+  border-radius: 99px; text-transform: uppercase; letter-spacing: 0.03em;
+}
+
+/* Artikel */
+.article-header { padding: 3rem 0 1rem; }
+.article-header h1 { font-size: clamp(1.6rem, 4.5vw, 2.2rem); line-height: 1.2; letter-spacing: -0.01em; }
+.article-header .meta { color: var(--muted); font-size: 0.9rem; margin-top: 0.7rem; }
+.disclosure {
+  background: #fffbeb; border: 1px solid #fde68a; border-radius: 10px;
+  padding: 0.8rem 1rem; font-size: 0.85rem; color: #78350f; margin: 1.2rem 0;
+}
+.content { padding-bottom: 2rem; }
+.content h2 { margin: 2.2rem 0 0.8rem; font-size: 1.4rem; letter-spacing: -0.01em; }
+.content h3 { margin: 1.6rem 0 0.6rem; font-size: 1.1rem; }
+.content p { margin: 0.9rem 0; }
+.content ul, .content ol { margin: 0.9rem 0 0.9rem 1.4rem; }
+.content li { margin: 0.4rem 0; }
+.content a { color: var(--accent); }
+.content code {
+  background: #f1f1f0; padding: 0.1rem 0.35rem; border-radius: 5px;
+  font-family: "SF Mono", ui-monospace, Menlo, monospace; font-size: 0.88em;
+}
+.content pre {
+  background: #1a1a2e; color: #e5e5e8; padding: 1rem; border-radius: 10px;
+  overflow-x: auto; margin: 1rem 0; font-size: 0.88rem; line-height: 1.5;
+}
+.content pre code { background: none; padding: 0; color: inherit; }
+.content table { width: 100%; border-collapse: collapse; margin: 1rem 0; font-size: 0.92rem; }
+.content th, .content td { border: 1px solid var(--border); padding: 0.55rem 0.7rem; text-align: left; }
+.content th { background: var(--accent-light); color: var(--accent); }
+.faq { border: 1px solid var(--border); border-radius: 10px; margin: 1rem 0; background: var(--card); }
+.faq summary { padding: 0.9rem 1rem; font-weight: 600; cursor: pointer; }
+.faq p { padding: 0 1rem 1rem; }
+
+/* Footer */
+footer.site {
+  border-top: 1px solid var(--border); margin-top: 3rem;
+  padding: 2rem 0; color: var(--muted); font-size: 0.85rem;
+}
+footer.site a { color: var(--muted); }
+.notice {
+  background: var(--accent-light); border-radius: 10px; padding: 0.9rem 1rem;
+  font-size: 0.9rem; color: #134e4a; margin: 1.5rem 0;
+}
